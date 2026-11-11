@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merch</title>
+    <style>
+      body{
+            background-image: url(https://i.pinimg.com/736x/39/7e/9f/397e9f64b443b9d7483504cf336aea62.jpg)
+        }
+
+      .boton{
+        position: absolute;
+        z-index: 99;
+        height: 280px;
+        margin-left: 37%;
+        margin-top: 10px;
+      }
+      
+      .izq{
+        position: absolute;
+        z-index: 99;
+        height: 200px;
+        margin-left: 17%;
+        margin-top: 200px;
+      }
+
+      .der{
+        position: absolute;
+        z-index: 99;
+        height: 200px;
+        margin-left: 72%;
+        margin-right: 15%;
+        margin-top: 200px;
+      }
+
+
+      .escalar{
+        height: 200px;
+        position: absolute;
+        z-index: 98;
+        margin-left: 100px;
+        margin-top: 350px;
+        animation: MoverAnim2 2s infinite ease-in-out;
+       }
+
+       @keyframes MoverAnim2{
+        0%{
+          transform: translateY(10px);
+        }
+        50%{
+          transform: translateY(60px);
+        }
+        100%{
+          transform: translateY(10px);
+        }
+       }
+
+      
+
+      .fresa{
+        z-index: 98;
+        position: absolute;
+        height: 150px;
+        margin-left: 68%;
+        margin-top: -10px;
+        animation: MoverAnim1 2s infinite ease-in-out;
+      }
+
+       @keyframes MoverAnim1{
+        0%{
+          transform: translateX(10px);
+        }
+        50%{
+          transform: translateX(25px);
+        }
+        100%{
+          transform: translateX(10px);
+        }
+       }
+
+       .kirbys{
+        z-index: 98;
+        position: absolute;
+        height: 500px;
+        margin-left: 75%;
+        margin-top: 47%;
+        animation: escalarAnim 3s infinite alternate ease-in-out;
+       }
+
+       @keyframes escalarAnim{
+        0%{
+          transform: scale(.8);
+        }
+        100%{
+          transform: scale(1);
+        }
+       }
+
+        #slideshow {
+        text-align: center;
+        overflow: hidden;
+        height: 950px;
+        width: 900px;
+        margin: 50px auto 400px auto;
+        background: 
+        linear-gradient(90deg,#fd4bb9 0%, #fa88f0 50%, #f8ed4b 100%);
+        border-radius: 40px;
+        
+      }
+      
+      .slide-wrapper {
+        width: 6000px;
+        animation: slide 20s infinite ease-in-out;
+      }
+      
+      img {
+        border-radius: 20px;
+        height: 600px;
+        margin-top: 220px;
+        z-index: 99;
+      }
+      
+      .imgUno {
+        float: left;
+        height: 400px;
+        width: 400px;
+      }
+      
+      .imgDos {
+        float: left;
+        height: 400px;
+        width: 400px;
+      }
+      
+      .imgTres {
+        float: left;
+        height: 400px;
+        width: 400px;
+      }
+      
+      .imgCuatro {
+        float: left;
+        height: 400px;
+        width: 400px;
+      }
+
+      .imgCinco {
+        float: left;
+        height: 400px;
+        width: 400px;
+      }
+
+      .imgSeis{
+        float: left;
+        height: 400px;
+        width: 400px;
+      }
+
+      .imgSiete{
+        float: left;
+        height: 400px;
+        width: 400px;
+      }
+
+      .imgOcho{
+        float: left;
+        height: 400px;
+        width: 400px;
+      }
+
+      
+      @keyframes slide {
+        20% {margin-left: 0px;}
+        30% {margin-left: -400px;}
+        40% {margin-left: -800px;}
+        50% {margin-left: -1200px;}
+        60% {margin-left: -1600px;}
+        70% {margin-left: -2000px;}
+        80% {margin-left: -2400px;}
+      }
+
+      .img-footer{
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    </style>
+</head>
+<body>
+  <div class="boton">
+    <img class="boton" src="img/boto1.png">
+  </div>
+
+  <div class="izq">
+    <img class="izq" src="img/izq.png">
+  </div>
+
+  <div class="der">
+    <img class="der" src="img/der.png">
+  </div>
+
+  <div class="fresa">
+    <img class="fresa" src="img/fresa.png">
+  </div>
+
+  <div class="escalar">
+    <img class="escalar" src="img/kirby6.png">
+  </div>
+
+  <div class="kirbys">
+    <img class="kirbys" src="img/kirby5.png">
+  </div>
+
+
+<div id="slideshow">
+        <div class="slide-wrapper">
+            <div class="imgUno">
+                <img src="img/amiibo1.png">
+            </div>
+            <div class="imgDos">
+                <img src="img/amiibo2.png">
+            </div>
+            <div class="imgTres">
+                <img src="img/amiibo3.png">
+            </div>
+            <div class="imgCuatro">
+                <img src="img/amiibo4.png">
+            </div>
+            <div class="imgCinco">
+                <img src="img/amiibo5.png">
+            </div>
+            <div class="imgSeis">
+                <img src="img/amiibo6.png">
+            </div>
+            <div class="imgSiete">
+                <img src="img/amiibo7.png">
+            </div>
+            <div class="imgOcho">
+                <img src="img/amiibo8.png">
+            </div>
+        </div>
+    </div>
+   <footer>
+    <img src="img/pie de pagina2.png" alt="pie de pagina2" class="img-footer">
+   </footer> 
+</body>
+</html>
