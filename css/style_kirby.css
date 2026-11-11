@@ -318,3 +318,80 @@ $carousel-tokens: defaults(
     width: 900px;
     background-color: white;
 }
+
+/* ===== RESPONSIVO PARA CELULARES (pegar al final del CSS) ===== */
+@media (max-width: 900px) {
+
+    body { overflow-x: hidden; }
+
+    .navbar,
+    .Cuerpo,
+    .Kirby,
+    .KirbyTXT,
+    .habilidades,
+    .muestra,
+    .Personalizacion,
+    .carrusel,
+    .carrusel img,
+    .piepagina,
+    .piepagina img {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Navbar */
+    .logo { height: 50px; }
+    .navbar { padding: 15px 10px; }
+    a {
+        padding-left: 0;
+        margin: 0 8px;
+        font-size: 15px;
+        display: inline-block;
+    }
+
+    /* Kirby (portada) */
+    .Kirby { background-size: cover; }
+    .Kirby h1 { font-size: 40px; padding-top: 60px; }
+    .Kirby h2 {
+        left: 0;
+        right: 0;
+        margin: 400px 20px 0;
+        font-size: 28px;
+    }
+    .Kirby img {
+        width: 200px;
+        left: 0;
+        right: 0;
+        margin: 150px auto 0;
+    }
+    .KirbyTXT { padding: 400px 20px 40px; }
+
+    /* Habilidades */
+    .habilidades {
+        height: auto;
+        min-height: 700px;
+        background-size: cover;
+    }
+    .habilidades h1 { font-size: 40px; padding-top: 120px; }
+    .muestra { height: auto; padding-bottom: 20px; }
+    .inline-block {
+        width: calc(50% - 20px);
+        height: auto;
+        min-height: 300px;
+        margin: 10px;
+    }
+    .skill { width: 100%; }
+
+    /* Personalización */
+    .Personalizacion {
+        height: auto;
+        min-height: 700px;
+        background-size: cover;
+    }
+    .Personalizacion h1 { font-size: 40px; padding-top: 120px; }
+    .carrusel { padding: 40px 0 60px; }
+
+    /* Footer */
+    .piepagina { height: auto; }
+    .piepagina img { padding-top: 350px; }
+}
