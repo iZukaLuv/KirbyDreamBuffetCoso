@@ -70,7 +70,7 @@ a {
 
  h5{
     font-size: 33.9px;
-    font-family: more sugar;
+    font-family: MoreSugar;
     color: #f0628e;
 
     background-image: url(../img/banderilla.png);
@@ -113,7 +113,7 @@ a {
 h6 {
     font-size: 25px;
     color: #f0628e;
-     font-family: more sugar;
+     font-family: MoreSugar;
 
     background-color: rgb(255, 255, 255);
    
@@ -152,7 +152,7 @@ h6 {
 h4 {
       font-size: 20px;
     color: #f0628e;
- font-family: more sugar;
+ font-family: MoreSugar;
     background-color: #fbce18;
     background-position: center;
     background-size: cover;
