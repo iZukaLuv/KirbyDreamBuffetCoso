@@ -1,23 +1,10 @@
 
      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     @font-face {
-        font-family:more sugar ; 
-        src: url(../fonts/MoreSugar-Thin.otf);
-    }
-
-    body {
-        background-image: url(https://i.pinimg.com/736x/39/7e/9f/397e9f64b443b9d7483504cf336aea62.jpg);
-        width: 900px;
-    }
-
-        #bloque1 {
-            height: 300px;
-            width: 900px;
-          
-
-           
-            
-        }
+    font-family: 'MoreSugar';
+    src: url(../fonts/MoreSugar-Regular.otf);
+}
+    
 
 .logo {
     height: 80px;
@@ -28,7 +15,7 @@
 }
 
 .navbar {
-    width: 900px;
+    width: 850px;
     padding: 25px;
     position: sticky;
     top: 0;
@@ -46,11 +33,27 @@ a {
     padding-left: 100px;
     color: #f0628e;
     font-size: 20px;
-    font-family: "more sugar";
+    font-family: "MoreSugar";
     text-decoration: none;
 }
 
 
+    body {
+        background-image: url(https://i.pinimg.com/736x/39/7e/9f/397e9f64b443b9d7483504cf336aea62.jpg);
+        width: 900px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+    
+        #bloque1 {
+            height: 300px;
+            width: 900px;
+          
+
+           
+            
+        }
  .ima{
     
     justify-content: center;
@@ -218,10 +221,21 @@ iframe {
     margin-left: 50px;
 }
 
-.fresa {
-    position: absolute;
-    margin-top: -70px;
-    margin-left: 30px;
+
+
+.piepagina{
+    width: 900px;
+    height: 500px;
+    background-color: transparent;
+    position: relative;
+    
+}
+
+.piepagina img {
+    padding-top: 200px;
+    width: 900px;
+    background-color: white;
+    padding-top: 300px;
 }
 
 

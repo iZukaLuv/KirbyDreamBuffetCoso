@@ -2,6 +2,7 @@
 
 .Cuerpo {
     width: 900px;
+    height: auto;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -111,7 +112,7 @@ position: relative;
 }
 .bloque9 img{
  width: 600px;
- heught: 300px;
+ height: 300px;
 }
 .bloque10{
      z-index: 999;
@@ -135,7 +136,7 @@ position: relative;
 }
 .bloque11 img{
      width: 400px;
- heught: 200px;
+ height: 200px;
 }
 .bloque12{
       z-index: 999;
@@ -147,7 +148,7 @@ position: relative;
 }
 .bloque12 img{
      width: 400px;
- heught: 200px;
+ height: 200px;
 }
 .bloque13{
       z-index: 999;
@@ -159,7 +160,7 @@ position: relative;
 }
 .bloque13 img{
      width: 600px;
- heught: 300px;
+ height: 300px;
 }
 .bloque14{
       z-index: 999;
@@ -171,7 +172,7 @@ position: relative;
 }
 .bloque14 img{
      width: 500px;
- heught: 250px;
+ height: 250px;
 }
 .bloque15{
  width: 900px;

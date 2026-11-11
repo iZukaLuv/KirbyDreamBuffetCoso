@@ -3,9 +3,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     @font-face {
-        font-family:more sugar ; 
-        src: url(../fonts/MoreSugar-Thin.otf);
-    }
+    font-family: 'MoreSugar';
+    src: url(../fonts/MoreSugar-Regular.otf);
+}
 body {
     font-family: 'Poppins', sans-serif;
     background-color: white;
@@ -29,7 +29,7 @@ body {
 }
 
 .navbar {
-    width: 900px;
+    width: 850px;
     padding: 25px;
     position: sticky;
     top: 0;
@@ -47,7 +47,7 @@ a {
     padding-left: 100px;
     color: #f0628e;
     font-size: 20px;
-    font-family: "more sugar";
+    font-family: "MoreSugar";
     text-decoration: none;
 }
 
@@ -248,15 +248,25 @@ body {
 
     /*FOOTER*/
 
-.piepagina{
-    width: 900px;
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: -640px;
+}
+
+.piepagina {
+    width: 800px;
+    height: 500px;
     background-color: transparent;
+    margin: 0 auto;
     position: relative;
-    
 }
 
 .piepagina img {
-    padding-top: 50px;
-    width: 900px;
-    background-color: white;
+    display: block;
+    width: 400%;
+    height: auto;
+    padding-top: 100px;
 }
