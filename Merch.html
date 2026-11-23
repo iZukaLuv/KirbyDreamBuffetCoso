@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+   <link href="img/logo.png" rel="icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merch</title>
@@ -10,8 +11,18 @@
     font-family: "MoreSugar";
     src: url(fonts/MoreSugar-Regular.otf);
 }
+
+/* ---------- Unidad de escala ----------
+   En escritorio 1 unidad = 1px (diseño original).
+   En pantallas de 900px o menos, 1 unidad = ancho de pantalla / 900,
+   y todo el diseño se reduce en proporción. */
+:root {
+    --u: 1px;
+}
+
       body{
-            background-image: url(https://i.pinimg.com/736x/39/7e/9f/397e9f64b443b9d7483504cf336aea62.jpg)
+            background-image: url(https://i.pinimg.com/736x/39/7e/9f/397e9f64b443b9d7483504cf336aea62.jpg);
+            overflow-x: hidden;
         }
 
 .Cuerpo {
@@ -23,16 +34,18 @@
 }
 
 .logo {
-    height: 80px;
+    height: calc(80 * var(--u));
     position: fixed;
     margin-top: 0px;
     z-index: 6;
-    margin-left: 10px;
+    margin-left: calc(10 * var(--u));
 }
 
 .navbar {
-    width: 850px;
-    padding: 25px;
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+    padding: calc(25 * var(--u));
     position: sticky;
     top: 0;
     overflow: hidden;
@@ -40,65 +53,72 @@
     text-align: center;
     z-index: 5;
 
-    border-radius: 0px 0px 20px 20px;
-    -webkit-border-radius: 0px 0px 20px 20px;
-    -moz-border-radius: 0px 0px 20px 20px;
+    border-radius: 0px 0px calc(20 * var(--u)) calc(20 * var(--u));
+    -webkit-border-radius: 0px 0px calc(20 * var(--u)) calc(20 * var(--u));
+    -moz-border-radius: 0px 0px calc(20 * var(--u)) calc(20 * var(--u));
 }
  
 a {
-    padding-left: 100px;
+    padding-left: calc(100 * var(--u));
     color: #f0628e;
-    font-size: 20px;
+    font-size: clamp(11px, calc(20 * var(--u)), 20px);
    font-family: "MoreSugar";
     text-decoration: none;
 }
 
+a:hover {
+    color:#f52668
+}
+/* ---------- Decoraciones ----------
+   Cada decoración es un <div> y una <img> con la MISMA clase.
+   Las reglas de clase (.boton, .izq...) se aplican a los dos, como en el original.
+   Las reglas "div.xxx" de más abajo solo colocan el <div>, anclándolo al
+   centro de la pantalla (donde está .Cuerpo) en lugar de al % de la ventana. */
 
-        
       .boton{
         position: absolute;
         z-index: 99;
-        height: 280px;
+        height: calc(280 * var(--u));
         margin-left: 37%;
-        margin-top: 30px;
+        margin-top: calc(30 * var(--u));
       }
       
       .izq{
         position: absolute;
         z-index: 99;
-        height: 200px;
+        height: calc(200 * var(--u));
         margin-left: 17%;
-        margin-top: 200px;
+        margin-top: calc(200 * var(--u));
       }
 
       .der{
         position: absolute;
         z-index: 99;
-        height: 200px;
+        height: calc(200 * var(--u));
         margin-left: 72%;
         margin-right: 15%;
-        margin-top: 200px;
+        margin-top: calc(200 * var(--u));
       }
 
 
       .escalar{
-        height: 200px;
+        height: calc(200 * var(--u));
         position: absolute;
         z-index: 98;
-        margin-left: 100px;
-        margin-top: 350px;
+        margin-left: calc(100 * var(--u));
+        margin-top: calc(350 * var(--u));
         animation: MoverAnim2 2s infinite ease-in-out;
        }
 
        @keyframes MoverAnim2{
         0%{
-          transform: translateY(10px);
+          transform: translateY(calc(10 * var(--u)));
         }
         50%{
-          transform: translateY(60px);
+          transform: translateY(calc(60 * var(--u)));
         }
         100%{
-          transform: translateY(10px);
+          transform: translateY(calc(10 * var(--u)));
         }
        }
 
@@ -107,28 +127,28 @@ a {
       .fresa{
         z-index: 98;
         position: absolute;
-        height: 150px;
+        height: calc(150 * var(--u));
         margin-left: 68%;
-        margin-top: 30px;
+        margin-top: calc(30 * var(--u));
         animation: MoverAnim1 2s infinite ease-in-out;
       }
 
        @keyframes MoverAnim1{
         0%{
-          transform: translateX(10px);
+          transform: translateX(calc(10 * var(--u)));
         }
         50%{
-          transform: translateX(25px);
+          transform: translateX(calc(25 * var(--u)));
         }
         100%{
-          transform: translateX(10px);
+          transform: translateX(calc(10 * var(--u)));
         }
        }
 
        .kirbys{
         z-index: 98;
         position: absolute;
-        height: 500px;
+        height: calc(500 * var(--u));
         margin-left: 75%;
         margin-top: 47%;
         animation: escalarAnim 3s infinite alternate ease-in-out;
@@ -143,87 +163,123 @@ a {
         }
        }
 
+/* Posición de cada <div> respecto al centro de la pantalla.
+   Con pantalla ancha quedan a los lados de .Cuerpo (como en la captura);
+   con pantalla angosta se acercan para no salirse. */
+div.boton {
+    left: calc(50% - 253 * var(--u));
+    margin-left: 0;
+}
+
+div.izq {
+    left: max(calc(50% - 655 * var(--u)), calc(-47 * var(--u)));
+    margin-left: 0;
+}
+
+div.der {
+    left: min(calc(50% + 450 * var(--u)), calc(100% - 160 * var(--u)));
+    margin-left: 0;
+}
+
+div.fresa {
+    left: min(calc(50% + 370 * var(--u)), calc(100% - 150 * var(--u)));
+    margin-left: 0;
+}
+
+div.escalar {
+    left: max(calc(50% - 897 * var(--u)), calc(-100 * var(--u)));
+    margin-left: 0;
+}
+
+div.kirbys {
+    left: min(calc(50% + 510 * var(--u)), calc(100% - 500 * var(--u)));
+    margin-left: 0;
+    margin-top: calc(945 * var(--u));
+}
+
+
         #slideshow {
         text-align: center;
         overflow: hidden;
-        height: 950px;
-        width: 900px;
-        margin: 50px auto 400px auto;
+        height: calc(950 * var(--u));
+        width: 100%;
+        max-width: 900px;
+        margin: calc(50 * var(--u)) auto calc(400 * var(--u)) auto;
         background: 
         linear-gradient(90deg,#fd4bb9 0%, #fa88f0 50%, #f8ed4b 100%);
-        border-radius: 40px;
+        border-radius: calc(40 * var(--u));
         
       }
       
       .slide-wrapper {
-        width: 6000px;
+        width: calc(6000 * var(--u));
         animation: slide 20s infinite ease-in-out;
       }
       
       img {
-        border-radius: 20px;
-        height: 600px;
-        margin-top: 220px;
+        border-radius: calc(20 * var(--u));
+        height: calc(600 * var(--u));
+        margin-top: calc(220 * var(--u));
         z-index: 99;
       }
       
       .imgUno {
         float: left;
-        height: 400px;
-        width: 400px;
+        height: calc(400 * var(--u));
+        width: calc(400 * var(--u));
       }
       
       .imgDos {
         float: left;
-        height: 400px;
-        width: 400px;
+        height: calc(400 * var(--u));
+        width: calc(400 * var(--u));
       }
       
       .imgTres {
         float: left;
-        height: 400px;
-        width: 400px;
+        height: calc(400 * var(--u));
+        width: calc(400 * var(--u));
       }
       
       .imgCuatro {
         float: left;
-        height: 400px;
-        width: 400px;
+        height: calc(400 * var(--u));
+        width: calc(400 * var(--u));
       }
 
       .imgCinco {
         float: left;
-        height: 400px;
-        width: 400px;
+        height: calc(400 * var(--u));
+        width: calc(400 * var(--u));
       }
 
       .imgSeis{
         float: left;
-        height: 400px;
-        width: 400px;
+        height: calc(400 * var(--u));
+        width: calc(400 * var(--u));
       }
 
       .imgSiete{
         float: left;
-        height: 400px;
-        width: 400px;
+        height: calc(400 * var(--u));
+        width: calc(400 * var(--u));
       }
 
       .imgOcho{
         float: left;
-        height: 400px;
-        width: 400px;
+        height: calc(400 * var(--u));
+        width: calc(400 * var(--u));
       }
 
       
       @keyframes slide {
         20% {margin-left: 0px;}
-        30% {margin-left: -400px;}
-        40% {margin-left: -800px;}
-        50% {margin-left: -1200px;}
-        60% {margin-left: -1600px;}
-        70% {margin-left: -2000px;}
-        80% {margin-left: -2400px;}
+        30% {margin-left: calc(-400 * var(--u));}
+        40% {margin-left: calc(-800 * var(--u));}
+        50% {margin-left: calc(-1200 * var(--u));}
+        60% {margin-left: calc(-1600 * var(--u));}
+        70% {margin-left: calc(-2000 * var(--u));}
+        80% {margin-left: calc(-2400 * var(--u));}
       }
 
       .img-footer{
@@ -231,6 +287,42 @@ a {
         height: auto;
         display: block;
       }
+
+
+/* =====================================================
+   PANTALLAS MEDIANAS (hasta 1100px)
+   El Kirby de abajo a la izquierda baja para quedar en el borde
+   inferior del slideshow y no tapar las tarjetas.
+   ===================================================== */
+@media (max-width: 1100px) {
+    div.escalar {
+        margin-top: calc(570 * var(--u));
+    }
+}
+
+
+/* =====================================================
+   TABLET Y MÓVIL (hasta 900px)
+   Todo el diseño se escala en proporción con --u
+   ===================================================== */
+@media (max-width: 900px) {
+
+    :root {
+        --u: calc((100vw - 16px) / 900);
+    }
+
+    /* Menú en una sola fila, con espacio para el logo a la izquierda */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: calc(25 * var(--u)) calc(15 * var(--u)) calc(25 * var(--u)) calc(95 * var(--u));
+    }
+
+    a {
+        padding-left: 0;
+    }
+}
     </style>
 </head>
 <body>
@@ -304,5 +396,6 @@ a {
    <footer>
     <img src="img/pie de pagina2.png" alt="pie de pagina2" class="img-footer">
    </footer> 
+</div>
 </body>
 </html>

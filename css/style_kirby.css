@@ -4,11 +4,22 @@
     src: url(../fonts/MoreSugar-Regular.otf);
 }
 
+/* ---------- Base responsiva ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
 body {
     background-image: url(https://i.pinimg.com/736x/39/7e/9f/397e9f64b443b9d7483504cf336aea62.jpg);
 }
 
- 
+
 .logo {
     height: 80px;
     position: fixed;
@@ -18,7 +29,8 @@ body {
 }
 
 .navbar {
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
     padding: 25px;
     position: sticky;
     top: 0;
@@ -31,7 +43,7 @@ body {
     -webkit-border-radius: 0px 0px 20px 20px;
     -moz-border-radius: 0px 0px 20px 20px;
 }
- 
+
 a {
     padding-left: 100px;
     color: #f0628e;
@@ -40,7 +52,9 @@ a {
     text-decoration: none;
 }
 
-
+a:hover {
+    color:#f52668
+}
 
 .Cuerpo {
     width: 900px;
@@ -49,16 +63,19 @@ a {
     margin-right: auto;
 }
 
-.Kirby { 
-    width: 900px;
+.Kirby {
+    width: 100%;
+    max-width: 900px;
     height: 500px;
     background: image-set(url(../img/FondoAmarillo.png));
+    background-size: cover;
     margin-left: auto;
     margin-right: auto;
 }
 
 .KirbyTXT {
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
     background-color: white;
     color: black;
     margin-top: 100px;
@@ -95,7 +112,7 @@ a {
     z-index: 2;
     position: absolute;
 
-    animation: wiggle 1s ease-in-out infinite; 
+    animation: wiggle 1s ease-in-out infinite;
 }
 
 @keyframes wiggle {
@@ -143,10 +160,12 @@ a {
 
     /*HABILIDADES*/
 
-.habilidades { 
-    width: 900px;
+.habilidades {
+    width: 100%;
+    max-width: 900px;
     height: 700px;
     background: image-set(url(../img/FondoAmarillo.png));
+    background-size: cover;
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
@@ -170,7 +189,8 @@ a {
 
 .muestra {
     margin-top: 100px;
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
     height: 700px;
     background-color: white;
     font-family: 'Poppins';
@@ -196,19 +216,21 @@ a {
     display: inline-block;
     vertical-align: top;
     width: 200px;
+    max-width: 100%;
     height: 300px;
     box-sizing: border-box;
     border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
 
-    animation: clip-in 0.8s 
+    animation: clip-in 0.8s
         cubic-bezier(0.95, 0, 0.03, 1.01)
         0s both;
     }
 
 .skill {
     width: 200px;
+    max-width: 100%;
 
     border-radius: 100px 100px 100px 100px;
     -webkit-border-radius: 100px 100px 100px 100px;
@@ -221,16 +243,18 @@ a {
     z-index: 2;
     position: absolute;
 
-    animation: wiggle 1s ease-in-out infinite; 
+    animation: wiggle 1s ease-in-out infinite;
 }
 
     /*PERSONALIZACIÓN*/
 
 .Personalizacion {
     margin-top: 350px;
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
     height: 700px;
     background: image-set(url(../img/FondoAmarillo.png));
+    background-size: cover;
     margin-left: auto;
     margin-right: auto;
 
@@ -253,7 +277,8 @@ a {
 }
 
 .carrusel {
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
     background-color: white;
     color: black;
     margin-top: 100px;
@@ -269,7 +294,9 @@ a {
 }
 
 .carrusel img {
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -306,92 +333,197 @@ $carousel-tokens: defaults(
     /*FOOTER*/
 
 .piepagina{
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
     height: 500px;
     background-color: transparent;
     position: relative;
-    
+
 }
 
 .piepagina img {
     padding-top: 700px;
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
     background-color: white;
 }
 
-/* ===== RESPONSIVO PARA CELULARES (pegar al final del CSS) ===== */
+
+/* =====================================================
+   TABLET (hasta 900px)
+   ===================================================== */
 @media (max-width: 900px) {
 
-    body { overflow-x: hidden; }
-
-    .navbar,
-    .Cuerpo,
-    .Kirby,
-    .KirbyTXT,
-    .habilidades,
-    .muestra,
-    .Personalizacion,
-    .carrusel,
-    .carrusel img,
-    .piepagina,
-    .piepagina img {
-        width: 100%;
-        box-sizing: border-box;
+    .navbar {
+        padding: 20px 15px;
     }
 
-    /* Navbar */
-    .logo { height: 50px; }
-    .navbar { padding: 15px 10px; }
     a {
-        padding-left: 0;
-        margin: 0 8px;
-        font-size: 15px;
-        display: inline-block;
+        padding-left: 40px;
+        font-size: 18px;
     }
 
-    /* Kirby (portada) */
-    .Kirby { background-size: cover; }
-    .Kirby h1 { font-size: 40px; padding-top: 60px; }
+    .Kirby h1,
+    .habilidades h1,
+    .Personalizacion h1 {
+        font-size: 56px;
+    }
+
     .Kirby h2 {
-        left: 0;
-        right: 0;
-        margin: 400px 20px 0;
+        font-size: 40px;
+        margin: 400px 20px 0 20px;
+        width: calc(100% - 40px);
+    }
+
+    .Kirby img {
+        width: 30%;
+        margin-left: 5%;
+    }
+
+    .KirbyTXT {
+        padding: 60px 40px 100px 40%;
+    }
+
+    .piepagina img {
+        padding-top: 450px;
+    }
+}
+
+
+/* =====================================================
+   MÓVIL (hasta 600px)
+   ===================================================== */
+@media (max-width: 600px) {
+
+    .logo {
+        height: 55px;
+        margin-left: 5px;
+    }
+
+    .navbar {
+        padding: 15px 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 0;
+    }
+
+    a {
+        padding: 0 10px;
+        font-size: 16px;
+    }
+
+    .Cuerpo {
+        padding: 0 10px;
+    }
+
+    /* ----- Kirby: los elementos absolutos pasan al flujo normal ----- */
+    .Kirby {
+        height: auto;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Kirby h1,
+    .habilidades h1,
+    .Personalizacion h1 {
+        font-size: 38px;
+        padding-top: 40px;
+        text-shadow:
+            -2px -2px 0 #ffffff,
+             2px -2px 0 #ffffff,
+            -2px  2px 0 #ffffff,
+             2px  2px 0 #ffffff;
+    }
+
+    .Kirby img {
+        position: static;
+        width: 55%;
+        max-width: 200px;
+        margin: 20px auto 0;
+    }
+
+    .Kirby h2 {
+        position: static;
+        width: 100%;
+        margin: 20px 0 0;
         font-size: 28px;
     }
-    .Kirby img {
-        width: 200px;
-        left: 0;
-        right: 0;
-        margin: 150px auto 0;
-    }
-    .KirbyTXT { padding: 400px 20px 40px; }
 
-    /* Habilidades */
+    .KirbyTXT {
+        position: static;
+        margin-top: 20px;
+        padding: 30px 20px 40px;
+        border-radius: 30px 30px 10px 10px;
+        -webkit-border-radius: 30px 30px 10px 10px;
+        -moz-border-radius: 30px 30px 10px 10px;
+    }
+
+    /* ----- Habilidades ----- */
     .habilidades {
         height: auto;
-        min-height: 700px;
-        background-size: cover;
+        min-height: 200px;
+        margin-top: 50px;
+        padding-bottom: 30px;
     }
-    .habilidades h1 { font-size: 40px; padding-top: 120px; }
-    .muestra { height: auto; padding-bottom: 20px; }
+
+    .habilidades h1 {
+        padding-top: 40px;
+    }
+
+    .muestra {
+        height: auto;
+        margin-top: 30px;
+        padding-bottom: 20px;
+        border-radius: 30px 30px 10px 10px;
+        -webkit-border-radius: 30px 30px 10px 10px;
+        -moz-border-radius: 30px 30px 10px 10px;
+    }
+
+    .muestra h3 {
+        font-size: 18px;
+    }
+
     .inline-block {
         width: calc(50% - 20px);
-        height: auto;
-        min-height: 300px;
         margin: 10px;
-    }
-    .skill { width: 100%; }
-
-    /* Personalización */
-    .Personalizacion {
         height: auto;
-        min-height: 700px;
-        background-size: cover;
+        min-height: 260px;
     }
-    .Personalizacion h1 { font-size: 40px; padding-top: 120px; }
-    .carrusel { padding: 40px 0 60px; }
 
-    /* Footer */
-    .piepagina { height: auto; }
-    .piepagina img { padding-top: 350px; }
+    .skill {
+        width: 100%;
+    }
+
+    /* ----- Personalización ----- */
+    .Personalizacion {
+        margin-top: 50px;
+        height: auto;
+        min-height: 200px;
+        padding-bottom: 30px;
+    }
+
+    .Personalizacion h1 {
+        padding-top: 40px;
+    }
+
+    .carrusel {
+        position: static;
+        margin-top: 30px;
+        padding: 30px 0 40px;
+        border-radius: 30px 30px 10px 10px;
+        -webkit-border-radius: 30px 30px 10px 10px;
+        -moz-border-radius: 30px 30px 10px 10px;
+    }
+
+    /* ----- Footer ----- */
+    .piepagina {
+        height: auto;
+    }
+
+    .piepagina img {
+        padding-top: 100px;
+    }
 }

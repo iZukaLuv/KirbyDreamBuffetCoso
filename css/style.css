@@ -241,6 +241,9 @@ a {
     text-decoration: none;
 
 }
+a:hover {
+    color:#f52668
+}
 .logo {
     height: 120px;
     width: auto;
